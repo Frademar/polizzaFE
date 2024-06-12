@@ -1,0 +1,19 @@
+<button class="rounded py-2 px-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas">Polizze</button>
+
+<div class="offcanvas offcanvas-start back-canvas" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title brown">Disponibile per l'acquisto:</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body p-0" #elementiCanvas>
+        <p  class=" ps-5 pt-3 pb-3 brown border-top tipologia-hover m-0 cursor-pointer" *ngFor="let tipologia of listaTipologie; let i=index" id="{{tipologia.id}}" (click)="cercaPolizza(tipologia, i)">{{tipologia.nome}}</p>
+  </div>
+</div>
+<div class="container">
+    <div class="row justify-content-end">
+        <h1 class="text-center">Polizze selezionate: {{tipologia}}</h1>
+        <div class="col-6 bg-info" *ngFor="let settore of listaSettore">
+            <p>{{settore.nome}}</p>
+        </div>
+    </div>
+</div>
